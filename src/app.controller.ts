@@ -1,7 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
 
-@Controller('api')  // 👈 AQUI LE AGREGAS EL PREFIJO CORRECTO
+@Controller('api')   // 👈 PREFIJO GLOBAL
 export class AppController {
+  constructor(private readonly appService: AppService) {}
 
   @Get('health')
   healthCheck() {
