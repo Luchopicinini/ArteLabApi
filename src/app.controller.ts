@@ -9,6 +9,7 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
   @Get('api/health')
   healthCheck() {
     return {
@@ -16,4 +17,15 @@ export class AppController {
       timestamp: new Date().toISOString(),
     };
   }
+
+  @Get('api/external-product')
+  getExternalProduct() {
+    return {
+      id: 1,
+      title: "Acrílico Profesional Artelab",
+      price: 4990,
+      description: "Pintura acrílica de alta calidad ideal para artistas.",
+    };
+  }
 }
+
