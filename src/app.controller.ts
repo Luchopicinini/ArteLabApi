@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller('api')   // ⭐ AQUÍ ESTÁ EL ARREGLO ⭐
+@Controller('api')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -22,9 +22,9 @@ export class AppController {
   getExternalProduct() {
     return {
       id: 1,
-      title: "Acrílico Profesional Artelab",
+      title: 'Acrílico Profesional Artelab',
       price: 4990,
-      description: "Pintura acrílica de alta calidad ideal para artistas.",
+      description: 'Pintura acrílica de alta calidad ideal para artistas.',
     };
   }
 }
