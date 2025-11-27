@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+@Controller('api')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -10,7 +10,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('api/health')
+  @Get('health')
   healthCheck() {
     return {
       status: 'ok',
@@ -18,7 +18,7 @@ export class AppController {
     };
   }
 
-  @Get('api/external-product')
+  @Get('external-product')
   getExternalProduct() {
     return {
       id: 1,
@@ -28,4 +28,3 @@ export class AppController {
     };
   }
 }
-
